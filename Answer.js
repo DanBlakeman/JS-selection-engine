@@ -12,8 +12,8 @@ var $ = function (selector) {
   };
 
   var findClass = function() {
-    if (selector.match(/(\.\w*)/)) {
-      return selector.match(/(\.\w*)/)[0];
+    if (selector.match(/\.(\w*)/)) {
+      return selector.match(/\.(\w*)/)[1];
     }
     return null;
   };
@@ -36,8 +36,6 @@ var $ = function (selector) {
   if (findId()) {
     var newToBeSelected = [];
     for (var i = 0; i < toBeSelected.length; i++) {
-      console.log(toBeSelected[i].id);
-      console.log(findId());
       if (toBeSelected[i].id === findId()) {
         newToBeSelected.push(toBeSelected[i])
       };
@@ -45,9 +43,16 @@ var $ = function (selector) {
     toBeSelected = newToBeSelected;
   };
 
+  if (findClass()) {
+    var newToBeSelected = [];
+    for (var i = 0; i < toBeSelected.length; i++) {
+      if ( toBeSelected[i].className.split(" ").indexOf(findClass()) !== -1 ) {
+        newToBeSelected.push(toBeSelected[i])
+      };
+    }
+    toBeSelected = newToBeSelected;
+  };
 
 
-
-  console.log(toBeSelected);
   return toBeSelected;
 };
