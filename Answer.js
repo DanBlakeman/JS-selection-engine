@@ -1,9 +1,29 @@
 var $ = function (selector) {
   var elements = [];
 
-  if (document.body.getElementsByTagName(selector)) {
-    return document.body.getElementsByTagName(selector);
-  }
+  var findHtmlTag = selector.match(/[a-z]*/)[0];
+
+  var findClass = function() {
+    if (selector.match(/(\.\w*)/)) {
+      console.log(selector.match(/(\.\w*)/)[0]);
+    } else {
+      console.log('none');
+    }
+  };
+
+  var findId = function() {
+    if (selector.match(/(\#\w*)/)) {
+      console.log(selector.match(/(\#\w*)/)[0]);
+    } else {
+      console.log('none');
+    }
+  };
+
+
+
+  // if (findClass) {
+  //   return document.body.getElementsByTagName(findTag);
+  // }
 
 
 
