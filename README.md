@@ -42,7 +42,7 @@ It feels a little dirty using a method from the Array prototype on a HTMLCollect
 
 Also feels a little dirty to declare functions within a function (line 17). But with both of these, it seemed a consice, readable way of achieving the goal given the rules of the challenge said to only edit the internals of the given function. :)
 
-## Extentions
+## Extensions
 
 I will likely investigate further refactoring options, particularily lines 4/5. I used a ternary here, as the regex match method would return an error if there is no match (null) and i tried to access the second element of null.
 
